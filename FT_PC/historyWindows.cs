@@ -15,6 +15,8 @@ namespace FT_PC
     {
         private Color lineColor = Color.FromArgb(240, 244, 249);
         private Color focusedColor = Color.FromArgb(102, 206, 255);
+        private Color timeBrushColor = Color.FromArgb(140, 140, 147);
+        private transferRecoder fileOper;
         public historyWindows()
         {
             InitializeComponent();
@@ -23,17 +25,33 @@ namespace FT_PC
         List<listBoxItem> list = new List<listBoxItem>();
         private void historyWindows_Load(object sender, EventArgs e)
         {
-            lb_historyFiles.ItemHeight = 30;
+            lb_historyFiles.ItemHeight = 20;
             lb_historyFiles.DrawItem += new System.Windows.Forms.DrawItemEventHandler(listBox1_DrawItem);
-            //lb_historyFiles.Items.Add(new listBoxItem("111", "2222"));
 
+            //recoderDataType data;
+            //fileOper = new transferRecoder();
+            //List<String> tempList = new List<String>();
+            //for (int i = 0; i < 30; i++)
+            //{
+            //    data=new recoderDataType();
+            //    data.filePath=i.ToString();
+            //    data.recTime=GetTime.getTime();
+            //    tempList.Add(data.formatRecoder());
+            //}
+            //String[] tempStr = tempList.ToArray();
+            //fileOper.addRecoder(tempStr);
+
+            #region 从文件中获得数据,并显示到界面上
             listBoxItem item;
-            for (int i = 0; i <= 20; i++)
+            String[] fileRecoder = new transferRecoder().readRecoder();
+            recoderDataType dataParser = new recoderDataType();
+            for (int i = 0; i < fileRecoder.Length; i++)
             {
-                item = new listBoxItem(null, i.ToString(), (i * 8).ToString());
+                item = new listBoxItem(null, dataParser.parserRecoder(fileRecoder[i])[0], dataParser.parserRecoder(fileRecoder[i])[1]);
                 list.Add(item);
                 lb_historyFiles.Items.Add(item);
             }
+            #endregion
         }
 
         private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
@@ -68,16 +86,68 @@ namespace FT_PC
             {
                 e.Graphics.InterpolationMode = InterpolationMode.HighQualityBilinear;
 
-                e.Graphics.DrawImage(list[e.Index].fileImg, (e.Bounds.Right+2), e.Bounds.Top+2, 20, 26);
+                e.Graphics.DrawImage(list[e.Index].fileImg, (e.Bounds.Right + 2), e.Bounds.Top + 2, 20, 26);
             }
 
-            SizeF size = e.Graphics.MeasureString(list[e.Index].timeToReceived, e.Font); //获取项文本尺寸
-            RectangleF rectF = new RectangleF((e.Bounds.Right - size.Width - 6), e.Bounds.Top, (size.Width+6), (e.Bounds.Height));
-            e.Graphics.DrawString(list[e.Index].timeToReceived, e.Font, myBrush, rectF,strFmt);
+            Font f = new Font("微软雅黑", 9, FontStyle.Regular);
+            SolidBrush timeBrush = new SolidBrush(timeBrushColor);
+            SizeF size = e.Graphics.MeasureString(list[e.Index].timeToReceived, f); //获取项文本尺寸
+            RectangleF rectF = new RectangleF((e.Bounds.Right - size.Width - 6), e.Bounds.Top, (size.Width + 6), (e.Bounds.Height));
+            e.Graphics.DrawString(list[e.Index].timeToReceived, f, timeBrush, rectF, strFmt);
 
             RectangleF rectFExpImg = new RectangleF((e.Bounds.Left + 26 + 20), e.Bounds.Top, (e.Bounds.Width - 46 - size.Width + 9), e.Bounds.Height);
             e.Graphics.DrawString(list[e.Index].fileNmae, e.Font, myBrush, rectFExpImg, strFmt);
         }
 
+        private void lb_historyFiles_MouseUp(object sender, MouseEventArgs e)
+        {
+            #region 获得当前鼠标点击的item位置
+            int posindex = lb_historyFiles.IndexFromPoint(new Point(e.X, e.Y));
+            lb_historyFiles.ContextMenuStrip = null;
+            if (posindex >= 0 && posindex < lb_historyFiles.Items.Count)
+            {
+                lb_historyFiles.SelectedIndex = posindex;
+            }
+            #endregion
+
+            base.OnMouseUp(e);
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip.Show(this, e.Location);
+            }
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            int selectedItemIndex = lb_historyFiles.SelectedIndex;
+            String temp = list[selectedItemIndex].formatStr();
+            if (fileOper == null)
+            {
+                fileOper = new transferRecoder();
+            }
+            fileOper.deleteRecoder(temp);
+            lb_historyFiles.Items.RemoveAt(selectedItemIndex);
+            list.RemoveAt(selectedItemIndex);
+            lb_historyFiles.Refresh();
+        }
+
+        private void lb_historyFiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void lb_historyFiles_MouseMove(object sender, MouseEventArgs e)
+        {
+            int index = lb_historyFiles.IndexFromPoint(e.Location);
+            if (index != -1 && index < lb_historyFiles.Items.Count)
+            {
+                String infoShowInTT=list[index].fileNmae+"   "+list[index].timeToReceived;
+                if (tt_item.GetToolTip(lb_historyFiles) != infoShowInTT)
+                {
+                    tt_item.SetToolTip(lb_historyFiles,infoShowInTT);
+                }
+            }
+        }
     }
 }

@@ -15,3 +15,11 @@
 \\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\bin\Debug\FT电脑版.exe.config
 \\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT电脑版.exe
 \\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT电脑版.pdb
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\bin\Debug\FT电脑版.exe
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\bin\Debug\FT电脑版.pdb
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.connectWindows.resources
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.mainForm.resources
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.historyWindows.resources
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.Properties.Resources.resources
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.csproj.GenerateResource.Cache
