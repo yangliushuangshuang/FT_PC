@@ -88,14 +88,15 @@ namespace FT_PC
 
                 e.Graphics.DrawImage(list[e.Index].fileImg, (e.Bounds.Right + 2), e.Bounds.Top + 2, 20, 26);
             }
+            #region 将时间显示到item上
+            //Font f = new Font("微软雅黑", 9, FontStyle.Regular);
+            //SolidBrush timeBrush = new SolidBrush(timeBrushColor);
+            //SizeF size = e.Graphics.MeasureString(list[e.Index].timeToReceived, f); //获取项文本尺寸
+            //RectangleF rectF = new RectangleF((e.Bounds.Right - size.Width - 6), e.Bounds.Top, (size.Width + 6), (e.Bounds.Height));
+            //e.Graphics.DrawString(list[e.Index].timeToReceived, f, timeBrush, rectF, strFmt);
+            #endregion
 
-            Font f = new Font("微软雅黑", 9, FontStyle.Regular);
-            SolidBrush timeBrush = new SolidBrush(timeBrushColor);
-            SizeF size = e.Graphics.MeasureString(list[e.Index].timeToReceived, f); //获取项文本尺寸
-            RectangleF rectF = new RectangleF((e.Bounds.Right - size.Width - 6), e.Bounds.Top, (size.Width + 6), (e.Bounds.Height));
-            e.Graphics.DrawString(list[e.Index].timeToReceived, f, timeBrush, rectF, strFmt);
-
-            RectangleF rectFExpImg = new RectangleF((e.Bounds.Left + 26 + 20), e.Bounds.Top, (e.Bounds.Width - 46 - size.Width + 9), e.Bounds.Height);
+            RectangleF rectFExpImg = new RectangleF((e.Bounds.Left + 26 + 20), e.Bounds.Top, (e.Bounds.Width - 46), e.Bounds.Height);
             e.Graphics.DrawString(list[e.Index].fileNmae, e.Font, myBrush, rectFExpImg, strFmt);
         }
 

@@ -77,7 +77,7 @@ namespace FT_PC
                 return false;
             }
             String[] srcStr = readRecoder();
-            String[] destStr=srcStr;
+            String[] destStr = new String[srcStr.Length-1];
             int j = 0;
             for (int i = 0; i < srcStr.Length; i++)
             {
