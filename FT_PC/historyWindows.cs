@@ -33,9 +33,9 @@ namespace FT_PC
             //List<String> tempList = new List<String>();
             //for (int i = 0; i < 30; i++)
             //{
-            //    data=new recoderDataType();
-            //    data.filePath=i.ToString();
-            //    data.recTime=GetTime.getTime();
+            //    data = new recoderDataType();
+            //    data.filePath = i.ToString();
+            //    data.recTime = GetTime.getTime();
             //    tempList.Add(data.formatRecoder());
             //}
             //String[] tempStr = tempList.ToArray();
