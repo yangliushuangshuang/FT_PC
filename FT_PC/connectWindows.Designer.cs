@@ -61,7 +61,7 @@
             this.sendFilesBy_Net.Location = new System.Drawing.Point(0, 0);
             this.sendFilesBy_Net.Margin = new System.Windows.Forms.Padding(0);
             this.sendFilesBy_Net.Name = "sendFilesBy_Net";
-            this.sendFilesBy_Net.Size = new System.Drawing.Size(310, 29);
+            this.sendFilesBy_Net.Size = new System.Drawing.Size(310, 27);
             this.sendFilesBy_Net.TabIndex = 1;
             this.sendFilesBy_Net.Text = "通过网络发送文件";
             this.sendFilesBy_Net.UseVisualStyleBackColor = false;
@@ -79,7 +79,7 @@
             this.sendFileBy_hotSpot.Location = new System.Drawing.Point(0, 29);
             this.sendFileBy_hotSpot.Margin = new System.Windows.Forms.Padding(0);
             this.sendFileBy_hotSpot.Name = "sendFileBy_hotSpot";
-            this.sendFileBy_hotSpot.Size = new System.Drawing.Size(310, 29);
+            this.sendFileBy_hotSpot.Size = new System.Drawing.Size(310, 27);
             this.sendFileBy_hotSpot.TabIndex = 1;
             this.sendFileBy_hotSpot.Text = "通过热点发送文件";
             this.sendFileBy_hotSpot.UseVisualStyleBackColor = false;
@@ -144,7 +144,7 @@
             this.Controls.Add(this.sendFilesBy_Net);
             this.Controls.Add(this.qrCode);
             this.Name = "connectWindows";
-            this.Size = new System.Drawing.Size(310, 442);
+            this.Size = new System.Drawing.Size(310, 440);
             this.Load += new System.EventHandler(this.connectWindows_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qrCode)).EndInit();
             this.panel1.ResumeLayout(false);

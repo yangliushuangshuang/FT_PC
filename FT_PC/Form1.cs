@@ -33,6 +33,8 @@ namespace FT_PC
         public void initUI()
         {
             cWindow.Show();
+            identifer_connectWf.Visible = true;
+            identifer_recoderWf.Visible = false;
             gbWindows.Controls.Clear();
             gbWindows.Controls.Add(cWindow);
         }
@@ -44,6 +46,8 @@ namespace FT_PC
 
         private void btn_connetWindow_Click(object sender, EventArgs e)
         {
+            identifer_connectWf.Visible = true;
+            identifer_recoderWf.Visible = false;
             cWindow.Show();
             gbWindows.Controls.Clear();
             gbWindows.Controls.Add(cWindow);
@@ -52,6 +56,8 @@ namespace FT_PC
         private void btn_historyWindow_Click(object sender, EventArgs e)
         {
             hWindow.Show();
+            identifer_connectWf.Visible = false;
+            identifer_recoderWf.Visible = true;
             gbWindows.Controls.Clear();
             gbWindows.Controls.Add(hWindow);
         }
@@ -196,6 +202,30 @@ namespace FT_PC
             {
                 tt_mainForm.SetToolTip(WIFIkeyValue, str);
             }
+        }
+
+        private void fileAcceptImg_MouseEnter(object sender, EventArgs e)
+        {
+            fileAcceptImg.BackColor = mouseOnColor;
+        }
+
+        private void fileAcceptImg_MouseLeave(object sender, EventArgs e)
+        {
+            fileAcceptImg.BackColor = defaultColor;
+        }
+
+        private void fileAcceptImg_MouseMove(object sender, MouseEventArgs e)
+        {
+            String str = "接收文件";
+            if (tt_mainForm.GetToolTip(fileAcceptImg) != str)
+            {
+                tt_mainForm.SetToolTip(fileAcceptImg, str);
+            }
+        }
+
+        private void fileAcceptImg_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("接收文件咯！！！");
         }
 
     }

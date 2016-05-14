@@ -16,7 +16,8 @@ namespace util
 		public const int BLOCK_SIZE = 1024*10;
         public const int HEAD_LEN = 8;
         public const string SPLITER = "/_/";
-        public const string RCV_DIR = System.Environment.CurrentDirectory+"\\"+"rcvFiles";
+        //public const string RCV_DIR = System.Environment.CurrentDirectory+"\\"+"rcvFiles";
+        public const string RCV_DIR = @"\\Mac\Home\Desktop";
 		public static int sendIndex
 		{
 			get

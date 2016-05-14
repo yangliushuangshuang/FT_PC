@@ -75,9 +75,6 @@
             this.reName.Size = new System.Drawing.Size(112, 22);
             this.reName.Text = "重命名";
             // 
-            // tt_item
-            // 
-            // 
             // historyWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -85,7 +82,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Controls.Add(this.lb_historyFiles);
             this.Name = "historyWindows";
-            this.Size = new System.Drawing.Size(310, 442);
+            this.Size = new System.Drawing.Size(310, 440);
             this.Load += new System.EventHandler(this.historyWindows_Load);
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.minSize = new System.Windows.Forms.PictureBox();
             this.exit = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.fileAcceptImg = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.WiFiSSIDandKEY = new System.Windows.Forms.Panel();
             this.WIFIkeyValue = new System.Windows.Forms.TextBox();
@@ -46,19 +48,22 @@
             this.btn_connetWindow = new System.Windows.Forms.Button();
             this.btn_historyWindow = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.identifer_recoderWf = new System.Windows.Forms.Panel();
+            this.identifer_connectWf = new System.Windows.Forms.Panel();
             this.gbWindows = new System.Windows.Forms.GroupBox();
             this.tt_mainForm = new System.Windows.Forms.ToolTip(this.components);
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileAcceptImg)).BeginInit();
             this.WiFiSSIDandKEY.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotSpotImg)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.gbWindows.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -121,6 +126,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.fileAcceptImg);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.WiFiSSIDandKEY);
             this.panel2.Controls.Add(this.hotSpotImg);
@@ -135,10 +141,23 @@
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
+            // fileAcceptImg
+            // 
+            this.fileAcceptImg.Image = global::FT_PC.Properties.Resources.accept_file1;
+            this.fileAcceptImg.Location = new System.Drawing.Point(242, 47);
+            this.fileAcceptImg.Name = "fileAcceptImg";
+            this.fileAcceptImg.Size = new System.Drawing.Size(50, 50);
+            this.fileAcceptImg.TabIndex = 4;
+            this.fileAcceptImg.TabStop = false;
+            this.fileAcceptImg.MouseClick += new System.Windows.Forms.MouseEventHandler(this.fileAcceptImg_MouseClick);
+            this.fileAcceptImg.MouseEnter += new System.EventHandler(this.fileAcceptImg_MouseEnter);
+            this.fileAcceptImg.MouseLeave += new System.EventHandler(this.fileAcceptImg_MouseLeave);
+            this.fileAcceptImg.MouseMove += new System.Windows.Forms.MouseEventHandler(this.fileAcceptImg_MouseMove);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel4.Location = new System.Drawing.Point(236, 50);
+            this.panel4.Location = new System.Drawing.Point(231, 50);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1, 48);
             this.panel4.TabIndex = 3;
@@ -150,7 +169,7 @@
             this.WiFiSSIDandKEY.Controls.Add(this.WifiKEY);
             this.WiFiSSIDandKEY.Controls.Add(this.WifiSSID);
             this.WiFiSSIDandKEY.Controls.Add(this.pictureBox1);
-            this.WiFiSSIDandKEY.Location = new System.Drawing.Point(79, 42);
+            this.WiFiSSIDandKEY.Location = new System.Drawing.Point(74, 42);
             this.WiFiSSIDandKEY.Name = "WiFiSSIDandKEY";
             this.WiFiSSIDandKEY.Size = new System.Drawing.Size(157, 63);
             this.WiFiSSIDandKEY.TabIndex = 1;
@@ -214,7 +233,7 @@
             // hotSpotImg
             // 
             this.hotSpotImg.Image = global::FT_PC.Properties.Resources.hotSpot1;
-            this.hotSpotImg.Location = new System.Drawing.Point(23, 47);
+            this.hotSpotImg.Location = new System.Drawing.Point(18, 47);
             this.hotSpotImg.Name = "hotSpotImg";
             this.hotSpotImg.Size = new System.Drawing.Size(50, 50);
             this.hotSpotImg.TabIndex = 2;
@@ -280,6 +299,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.gbWindows);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
@@ -289,29 +309,46 @@
             this.panel3.Size = new System.Drawing.Size(312, 600);
             this.panel3.TabIndex = 3;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.identifer_recoderWf);
+            this.panel5.Controls.Add(this.identifer_connectWf);
+            this.panel5.Location = new System.Drawing.Point(1, 157);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(310, 2);
+            this.panel5.TabIndex = 1;
+            // 
+            // identifer_recoderWf
+            // 
+            this.identifer_recoderWf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.identifer_recoderWf.Location = new System.Drawing.Point(152, 0);
+            this.identifer_recoderWf.Name = "identifer_recoderWf";
+            this.identifer_recoderWf.Size = new System.Drawing.Size(156, 2);
+            this.identifer_recoderWf.TabIndex = 0;
+            // 
+            // identifer_connectWf
+            // 
+            this.identifer_connectWf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.identifer_connectWf.Location = new System.Drawing.Point(1, 0);
+            this.identifer_connectWf.Name = "identifer_connectWf";
+            this.identifer_connectWf.Size = new System.Drawing.Size(146, 2);
+            this.identifer_connectWf.TabIndex = 0;
+            // 
             // gbWindows
             // 
             this.gbWindows.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbWindows.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.gbWindows.Controls.Add(this.panel5);
-            this.gbWindows.Location = new System.Drawing.Point(1, 157);
+            this.gbWindows.Location = new System.Drawing.Point(1, 159);
             this.gbWindows.Margin = new System.Windows.Forms.Padding(0);
             this.gbWindows.Name = "gbWindows";
             this.gbWindows.Padding = new System.Windows.Forms.Padding(0);
-            this.gbWindows.Size = new System.Drawing.Size(310, 442);
+            this.gbWindows.Size = new System.Drawing.Size(310, 440);
             this.gbWindows.TabIndex = 3;
             this.gbWindows.TabStop = false;
             this.gbWindows.Text = "gbWinodws";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
-            this.panel5.Location = new System.Drawing.Point(1, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(149, 2);
-            this.panel5.TabIndex = 0;
             // 
             // mainForm
             // 
@@ -320,6 +357,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(126)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(312, 600);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainForm";
@@ -329,13 +367,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.minSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileAcceptImg)).EndInit();
             this.WiFiSSIDandKEY.ResumeLayout(false);
             this.WiFiSSIDandKEY.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotSpotImg)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.gbWindows.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -361,7 +400,10 @@
         private System.Windows.Forms.TextBox WIFIkeyValue;
         private System.Windows.Forms.TextBox WIFIssidValue;
         private System.Windows.Forms.ToolTip tt_mainForm;
+        private System.Windows.Forms.Panel identifer_connectWf;
+        private System.Windows.Forms.Panel identifer_recoderWf;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox fileAcceptImg;
     }
 }
 
