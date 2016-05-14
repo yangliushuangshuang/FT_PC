@@ -23,3 +23,4 @@
 \\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.historyWindows.resources
 \\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.Properties.Resources.resources
 \\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\obj\Debug\FT_PC.csproj.GenerateResource.Cache
+\\Mac\Home\Documents\FT_PC\FT_PC\FT_PC\bin\Debug\thoughtworks.qrcode.dll
