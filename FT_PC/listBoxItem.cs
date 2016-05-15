@@ -30,5 +30,11 @@ namespace FT_PC
             this.fileNmae = fileName;
             this.timeToReceived = timeToReceived;
         }
+        public String formatStr()
+        {
+            String result;
+            result = fileNmae + "&" + timeToReceived;
+            return result;
+        }
     }
 }
